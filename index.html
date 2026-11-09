@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102b3e">
+<meta name="description" content="RADIOPRO — apoio à rotina de radioproteção e segurança na Radiologia.">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<title>RADIOPRO | Segurança Radiológica</title>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><div class="logo">☢</div><div><strong>RADIOPRO</strong><small>SEGURANÇA RADIOLÓGICA</small></div></div>
+  <button id="installBtn" class="install hidden">Instalar app</button>
+</header>
+<main>
+<section class="hero">
+  <span class="tag">ODS 3 · SAÚDE E BEM-ESTAR</span>
+  <h1>Proteção é parte do procedimento.</h1>
+  <p>Uma ferramenta de apoio à organização do trabalho e à segurança radiológica.</p>
+</section>
+
+<section class="alert">
+  <div class="alert-icon">!</div>
+  <div><b>LEMBRETE DE AFASTAMENTO</b><h2>Vai realizar uma exposição?</h2>
+  <p>Saia da sala ou permaneça atrás da barreira de proteção antes de acionar a exposição. Evite permanecer próximo ao paciente ou ao equipamento sem necessidade.</p></div>
+</section>
+
+<nav class="tabs" aria-label="Navegação principal">
+<button class="tab active" data-tab="home">Início</button><button class="tab" data-tab="pre">Preparo</button><button class="tab" data-tab="during">Exposição</button><button class="tab" data-tab="post">Finalização</button><button class="tab" data-tab="alara">Guia ALARA</button>
+</nav>
+
+<section id="home" class="panel active">
+  <h2>Painel de segurança</h2><p class="muted">Selecione uma etapa para consultar e marcar os itens conferidos.</p>
+  <div class="cards">
+    <button class="card" data-go="pre"><span>01</span><b>Antes do exame</b><small>Identificação, preparo e dosimetria</small></button>
+    <button class="card" data-go="during"><span>02</span><b>Durante a exposição</b><small>Afastamento, barreiras e otimização</small></button>
+    <button class="card" data-go="post"><span>03</span><b>Após o exame</b><small>Qualidade, registros e organização</small></button>
+    <button class="card" data-go="alara"><span>04</span><b>Princípios de proteção</b><small>ALARA, tempo, distância e blindagem</small></button>
+  </div>
+  <div class="note"><b>Dupla checagem e padronização</b><p>Conferências sistemáticas e registros consistentes ajudam a prevenir falhas de processo e fortalecem a cultura de segurança.</p></div>
+  <div class="actions"><button id="notifyBtn" class="secondary">Ativar lembretes neste dispositivo</button><button id="printHome" class="secondary">Imprimir / salvar PDF</button></div>
+  <p id="notifyStatus" class="muted tiny"></p>
+</section>
+
+<section id="pre" class="panel">
+  <div class="section-head"><div><h2>Antes do exame</h2><p class="muted">Preparação e verificações iniciais</p></div><span class="progress-label" id="prePct">0%</span></div>
+  <div class="progress"><i id="preBar"></i></div><div class="count" id="preCount"></div><div id="preList" class="checklist"></div>
+  <div class="actions"><button class="secondary reset" data-reset="pre">Reiniciar etapa</button><button class="primary print" data-print="pre">Imprimir / salvar PDF</button></div>
+</section>
+
+<section id="during" class="panel">
+  <div class="section-head"><div><h2>Durante a exposição</h2><p class="muted">Proteção do profissional, paciente e acompanhante</p></div><span class="progress-label" id="duringPct">0%</span></div>
+  <div class="progress"><i id="duringBar"></i></div><div class="count" id="duringCount"></div><div id="duringList" class="checklist"></div>
+  <div class="note warning"><b>Atenção ao afastamento</b><p>Em radiografia convencional, o profissional deve, sempre que possível, sair da sala ou permanecer atrás de barreira estrutural durante a exposição. Se a permanência for indispensável, seguir o protocolo institucional, usar proteção adequada e manter-se fora do feixe primário.</p></div>
+  <div class="actions"><button class="secondary reset" data-reset="during">Reiniciar etapa</button><button class="primary print" data-print="during">Imprimir / salvar PDF</button></div>
+</section>
+
+<section id="post" class="panel">
+  <div class="section-head"><div><h2>Após o exame</h2><p class="muted">Avaliação, registros e organização</p></div><span class="progress-label" id="postPct">0%</span></div>
+  <div class="progress"><i id="postBar"></i></div><div class="count" id="postCount"></div><div id="postList" class="checklist"></div>
+  <div class="actions"><button class="secondary reset" data-reset="post">Reiniciar etapa</button><button class="primary print" data-print="post">Imprimir / salvar PDF</button></div>
+</section>
+
+<section id="alara" class="panel">
+<h2>Princípio ALARA</h2><p class="muted">As Low As Reasonably Achievable — tão baixo quanto razoavelmente exequível.</p>
+<div class="note"><b>Otimização da proteção radiológica</b><p>Buscar exposições tão baixas quanto razoavelmente exequível, considerando fatores técnicos, econômicos e sociais, sem comprometer o objetivo clínico do procedimento.</p></div>
+<div class="principles">
+<article><div class="picon">◷</div><div><h3>Tempo</h3><p>Reduzir o tempo de exposição e evitar repetições desnecessárias. Planejar posicionamento e técnica antes de acionar o equipamento.</p></div></article>
+<article><div class="picon">↔</div><div><h3>Distância</h3><p>Aumentar a distância em relação à fonte durante a exposição. Sempre que possível, sair da sala ou posicionar-se atrás da barreira protetora.</p></div></article>
+<article><div class="picon">⬡</div><div><h3>Blindagem</h3><p>Utilizar barreiras estruturais e dispositivos de proteção apropriados ao ambiente e ao procedimento.</p></div></article>
+</div>
+<h2>Outros conceitos fundamentais</h2>
+<div class="glossary">
+<p><b>Justificação:</b> o procedimento deve apresentar benefício que justifique a exposição.</p>
+<p><b>Otimização:</b> adequar a proteção às condições do procedimento.</p>
+<p><b>Limitação de dose:</b> observar os limites aplicáveis à exposição ocupacional e do público; não confundir com limites de dose para pacientes.</p>
+<p><b>Dosimetria individual:</b> utilizar e acompanhar o dosímetro conforme o programa de monitoração e as orientações do serviço.</p>
+<p><b>Colimação:</b> restringir o campo de radiação à região necessária.</p>
+<p><b>Feixe primário:</b> nunca posicionar o corpo no feixe útil de radiação.</p>
+</div>
+<div class="actions"><button class="primary" id="printGuide">Imprimir guia / salvar PDF</button></div>
+</section>
+
+<section class="credits">
+  <span class="tag">PROJETO EXTENSIONISTA</span>
+  <h3>Organização e otimização dos processos de trabalho na Radiologia por meio de ferramentas digitais.</h3>
+  <b>ODS 3 — Saúde e Bem-Estar · Meta 3.9</b>
+  <p>Desenvolvido por <strong>Nathalia Alves</strong><br><small>Análise e Desenvolvimento de Sistemas</small></p>
+</section>
+</main>
+<footer>RADIOPRO · Versão demonstrativa 1.0 · Conteúdo sujeito à validação institucional.</footer>
+<script src="app.js"></script>
+</body></html>
